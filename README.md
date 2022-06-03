@@ -19,9 +19,11 @@ This guide is divided between examples and specific recommendations.
 You will find examples in the modules folder. Each module can be used as a reference to see the standards in action, or used as a starting point for your own module.
 The standards are broken up in to three categories (structure, naming, and coding).
 
-## 
+## Core Concepts
+Core Concepts outlines standardized development structure, naming and coding practices. This will help both individuals and the community create project that and consistent, maintanable and that others can easily understand and collaborate on. 
 
-### Structure:
+### Structure: 
+So projects across the community are created in consistent and maintanable manner, we have created a basic module called [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure) that demostrates & documents this.
 
 ### Naming:
 
