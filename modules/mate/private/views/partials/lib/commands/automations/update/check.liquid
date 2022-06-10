@@ -1,0 +1,51 @@
+{% liquid
+
+  assign required_fields = 'item_id'
+
+
+  comment
+  ---------------------------------
+    Validate input from the build function
+  ---------------------------------
+  endcomment
+
+  assign c = '{ "errors": {}, "valid": true }' | parse_json
+
+
+  comment
+  ---------------------------------
+    Check if required fields are BLANK
+  ---------------------------------
+  endcomment
+
+  assign required_fields = required_fields | remove: ' ' | split: ','
+
+  for required_field in required_fields
+
+    if object[required_field] == blank
+      render '<%= &module_path =%>/lib/register_error', contract: c, field_name: required_field, key: '<%= &module_path =%>/module.errors.blank'
+    endif
+
+  endfor
+
+
+  comment
+  ---------------------------------
+    Check for custom requirements (if needed)
+  ---------------------------------
+  endcomment
+
+
+
+  comment
+  ---------------------------------
+    Assign valid and errors to main object
+  ---------------------------------
+  endcomment
+
+  hash_assign object['valid'] = c.valid
+  hash_assign object['errors'] = c.errors
+
+  return object
+
+%}

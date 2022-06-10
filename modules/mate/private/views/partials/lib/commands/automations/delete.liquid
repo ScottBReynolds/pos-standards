@@ -1,0 +1,16 @@
+{% liquid
+
+  function object = '<%= &module_path =%>/lib/commands/automations/delete/build', item_id: item_id
+
+  function object = '<%= &module_path =%>/lib/commands/automations/delete/check', object: object
+
+  if object.valid
+
+    function object = '<%= &module_path =%>/lib/commands/automations/delete/execute', object: object
+
+  endif
+
+
+  return object
+
+%}

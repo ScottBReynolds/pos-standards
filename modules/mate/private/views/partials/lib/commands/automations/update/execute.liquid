@@ -1,0 +1,21 @@
+{% liquid
+
+  graphql r = '<%= &module_path =%>/automations/update', args: object
+
+  if r.errors
+
+    log r.errors, type: 'errors in <%= &module_path =%>/lib/commands/automations/update/execute'
+
+    hash_assign object['valid'] = false
+    hash_assign object['errors'] = r.errors
+
+  else
+
+    assign object = r.item | default: '{}' | parse_json
+    hash_assign object['valid'] = true
+
+  endif
+
+  return object
+
+%}
