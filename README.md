@@ -25,7 +25,7 @@ The standards are broken up in to three categories (structure, naming, and codin
 So projects across the community are created in consistent and maintanable manner, we have created a basic module called [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure) that demostrates & documents this.
 
 #### template-values.json
-Modules should include a variable named "module_path". To avoid module naming collisions, modules need the ability to be renamed. [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
+To avoid module name collisions modules should include a variable named "module_path". [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
 
 ### Naming:
 
