@@ -17,14 +17,17 @@ The intention is to create a more uniform way to structure and "code" a Platform
 ## How to use this guide:
 This guide is divided between examples and specific recommendations.
 You will find examples in the modules folder. Each module can be used as a reference to see the standards in action, or used as a starting point for your own module.
-The standards are broken up in to three categories (structure, naming, and coding).
 
-## Core Concepts
-Core Concepts outlines standardized development structure, naming and coding practices. This will help both individuals and the community create project that and consistent, maintanable and that others can easily understand and collaborate on. 
+## Standards
+The standards are broken up in to three categories (structure, naming, and coding).
 
 ### Structure: 
 So projects across the community are created in consistent and maintanable manner, we have created a basic module called [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure) that demostrates & documents this.
 
+#### template-values.json
+Modules should include a variable named "module_path". To avoid module naming collisions, modules need the ability to be renamed. [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
+
 ### Naming:
+
 
 ### Coding:
