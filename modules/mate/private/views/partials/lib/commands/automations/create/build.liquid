@@ -1,0 +1,60 @@
+{% liquid
+
+  comment
+  ---------------------------------
+    # POSSIBLE PARAMETERS
+  ---------------------------------
+  endcomment
+
+  assign params = 'name,trigger,function_path,priority,delay,max_attempts,is_background_job'
+
+
+  comment
+  ---------------------------------
+    # BUILD OBJECT
+  ---------------------------------
+  endcomment
+
+  assign object = object | default: '{}' | parse_json
+
+  assign param_array = params | remove: ' ' | split: ','
+  for param in param_array
+    if [param]
+      hash_assign object[param] = [param]
+    endif
+  endfor
+
+
+  comment
+  ---------------------------------
+    # CUSTOMIZE (if needed)
+  ---------------------------------
+  endcomment
+
+
+  comment
+  ---------------------------------
+    # Defaults (if needed)
+  ---------------------------------
+  endcomment
+
+  hash_assign object['trigger'] = object.trigger | default: object.name
+  hash_assign object['name'] = object.name | default: object.trigger
+  hash_assign object['is_background_job'] = object.is_background_job | default: true
+  hash_assign object['delay'] = object.delay | default: 0 | times: 1.0
+  hash_assign object['max_attempts'] = object.max_attempts | default: 1 | plus: 0
+
+  if object.priority != 'low' and object.priority != 'high'
+    hash_assign object['priority'] = 'default'
+  endif
+
+
+  comment
+  ---------------------------------
+    # Return Object
+  ---------------------------------
+  endcomment
+
+  return object
+
+%}

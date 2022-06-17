@@ -1,0 +1,13 @@
+{% liquid
+
+  if item_id
+
+    function items  = '<%= &module_path =%>/lib/queries/automations/search', item_id: item_id, limit: 1, page_num: 1
+
+    include '<%= &module_path =%>/lib/handle_graphql_response', r: r, name: 'queries/automations/find'
+
+  endif
+
+  return items.results.first
+
+%}

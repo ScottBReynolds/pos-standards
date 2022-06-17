@@ -1,0 +1,7 @@
+en:
+  module:
+    errors:
+      blank: blank field
+      invalid: Invalid
+
+    _version: mate-0.1

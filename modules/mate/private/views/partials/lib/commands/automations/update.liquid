@@ -1,0 +1,13 @@
+{%- liquid
+
+  function object = '<%= &module_path =%>/lib/commands/automations/update/build', object: object, item_id: item_id, name: name, trigger: trigger, function_path: function_path, priority: priority, delay: delay, max_attempts: max_attempts, is_background_job: is_background_job
+
+  function object = '<%= &module_path =%>/lib/commands/automations/update/check', object: object
+
+  if object.valid
+    function object = '<%= &module_path =%>/lib/commands/automations/update/execute', object: object
+  endif
+
+  return object
+
+-%}
