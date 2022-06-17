@@ -17,8 +17,7 @@ The intention is to create a more uniform way to structure and "code" a Platform
 - Speeds up onboarding/training
 
 ## How to use this guide:
-This guide is divided between examples and specific recommendations.
-You will find examples in the modules folder. Each module can be used as a reference to see the standards in action, or used as a starting point for your own module.
+This guide is divided between examples and specific recommendations. You will find examples in the [modules folder](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules). Each module can be used as a reference to see the standards in action, or used as a starting point for your own module.
 
 ## Standards
 The standards are broken up in to three categories (structure, naming, and coding).
