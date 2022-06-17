@@ -1,6 +1,6 @@
 # Unofficial Standards for PlatformOS
 
-These standards are based of the PlatformOS Core Concepts. [Read this first](https://documentation.platformos.com/developer-guide/pos-marketplace-template/core-concepts#general-rules)
+These standards are based off the PlatformOS Core Concepts. [Read this first](https://documentation.platformos.com/developer-guide/pos-marketplace-template/core-concepts#general-rules)
 
 ## Purpose:
 The intention is to create a more uniform way to structure and "code" a PlatformOS project. When a PlatformOS project adheres to community standards readability, maintainability, and reusability are improved.
