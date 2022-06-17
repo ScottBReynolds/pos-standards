@@ -23,7 +23,7 @@ This guide is divided between examples and specific recommendations. You will fi
 The standards are broken up in to three categories (structure, naming, and coding).
 
 ### Structure: 
-So projects across the community are created in consistent and maintanable manner, we have created a basic module called [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure) that demostrates & documents this.
+The example module, [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure), demostrates the recommended structure.
 
 #### template-values.json
 To avoid module name collisions modules should include a variable named "module_path". [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
