@@ -28,6 +28,13 @@ The example module, [Structure](https://github.com/ScottBReynolds/pos-standards/
 #### template-values.json
 To avoid module name collisions modules should include a variable named "module_path". [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
 
+#### Commands
+Commands should be in the commands directory: [views/partials/lib/commands](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure/private/views/partials/lib/commands)
+
+#### Queries
+Queries should be in the queries directory: [views/partials/lib/queries](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure/private/views/partials/lib/queries)
+
+
 ### Naming:
 
 
