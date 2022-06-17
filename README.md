@@ -37,5 +37,13 @@ Queries should be in the queries directory: [views/partials/lib/queries](https:/
 
 ### Naming:
 
+#### ids
+When working with queries and mutations, there may be several ids. Properly naming ids will reduce confusion.
+##### item_id
+Prefix the "main" record id with 'item' (i.e. 'item_id')
+##### Secondary ids
+Prefix "secondary" ids with object or property name. Examples: user_id, property_id, etc.
+#### is_
+Functions that return a boolean should be prefixed with 'is_'. (e.g. is_logged_in, is_admin, is_user)
 
 ### Coding:
