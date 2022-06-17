@@ -1,0 +1,59 @@
+{% liquid
+
+
+  comment
+  ---------------------------------
+    # POSSIBLE PARAMETERS
+  ---------------------------------
+  endcomment
+
+  assign params = 'name,trigger,function_path,item_id,limit,page_num'
+
+
+  comment
+  ---------------------------------
+    # BUILD OBJECT
+    # Start with object parameter (if passed) or empty object
+  ---------------------------------
+  endcomment
+
+  assign object = object | default: '{}' | parse_json
+
+
+  comment
+  ---------------------------------
+    # PARAMETERS
+    # Move specific parameters to object
+    # This code block can NOT be a function.
+  ---------------------------------
+  endcomment
+
+  assign param_array = params | remove: ' ' | split: ','
+  for param in param_array
+    if [param]
+      hash_assign object[param] = [param]
+    endif
+  endfor
+
+
+  comment
+  ---------------------------------
+    # QUERY: Find items (args = object)
+  ---------------------------------
+  endcomment
+
+  graphql r = '<%= &module_path =%>/automations/search', args: object
+
+
+  comment
+  ---------------------------------
+    # OUTPUT Errors
+  ---------------------------------
+  endcomment
+
+  render '<%= &module_path =%>/lib/handle_graphql_response', r: r, name: 'queries/automations/search'
+
+
+  return r.items
+
+%}

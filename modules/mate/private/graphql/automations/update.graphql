@@ -1,0 +1,27 @@
+mutation update(
+  $item_id: ID!
+  $name: String
+  $trigger: String
+  $function_path: String
+  $priority: String
+  $delay: Float
+  $max_attempts: Int
+  $is_background_job: Boolean
+) {
+  item: record_update(
+    id: $item_id
+    record: {
+      properties: [
+        { name: "name", value: $name }
+        { name: "trigger", value: $trigger }
+        { name: "function_path", value: $function_path }
+        { name: "priority", value: $priority }
+        { name: "delay", value_float: $delay }
+        { name: "max_attempts", value_int: $max_attempts }
+        { name: "is_background_job", value_boolean: $is_background_job }
+      ]
+    }
+  ) {
+    id
+  }
+}

@@ -1,0 +1,33 @@
+query search(
+  $name: String
+  $trigger: String
+  $function_path: String
+  $limit: Int = 50
+  $page_num: Int = 1
+  $item_id: ID
+) {
+  items: records(
+    page: $page_num
+    per_page: $limit
+    filter: {
+      id: { value: $item_id }
+      table: { value: "<%= &module_path =%>/automation" }
+      properties: [
+        { name: "name", value: $name }
+        { name: "trigger", value: $trigger }
+        { name: "function_path", value: $function_path }
+      ]
+    }
+  ) {
+    results {
+      id
+      name: property(name: "name")
+      trigger: property(name: "trigger")
+      function_path: property(name: "function_path")
+      priority: property(name: "priority")
+      delay: property_float(name: "delay")
+      max_attempts: property_int(name: "max_attempts")
+      is_background_job: property_boolean(name: "is_background_job")
+    }
+  }
+}

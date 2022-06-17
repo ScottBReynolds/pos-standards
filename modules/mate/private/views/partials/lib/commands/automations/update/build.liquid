@@ -1,0 +1,43 @@
+{% liquid
+
+  comment
+  ---------------------------------
+    # POSSIBLE PARAMETERS
+  ---------------------------------
+  endcomment
+
+  assign params = 'item_id,name,trigger,function_path,priority,delay,max_attempts,is_background_job'
+
+
+  comment
+  ---------------------------------
+    # BUILD OBJECT
+  ---------------------------------
+  endcomment
+
+  assign object = object | default: '{}' | parse_json
+
+  assign param_array = params | remove: ' ' | split: ','
+  for param in param_array
+    if [param]
+      hash_assign object[param] = [param]
+    endif
+  endfor
+
+
+  comment
+  ---------------------------------
+    # CUSTOMIZE (if needed)
+  ---------------------------------
+  endcomment
+
+  if object.item_id
+
+    hash_assign object['item_id'] = object.item_id | plus: 0
+
+  endif
+
+
+  return object
+
+  %}

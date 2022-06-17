@@ -1,0 +1,5 @@
+mutation delete($item_id: ID!) {
+  item: record_delete(id: $item_id) {
+    id
+  }
+}

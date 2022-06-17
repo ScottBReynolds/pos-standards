@@ -1,0 +1,14 @@
+name: automation
+properties:
+  - name: delay
+    type: float
+  - name: function_path
+  - name: is_background_job
+    type: boolean
+  - name: is_required
+    type: boolean
+  - name: max_attempts
+    type: integer
+  - name: name
+  - name: priority
+  - name: trigger

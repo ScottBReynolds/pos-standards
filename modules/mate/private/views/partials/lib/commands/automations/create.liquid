@@ -1,0 +1,16 @@
+{% liquid
+
+  function object = '<%= &module_path =%>/lib/commands/automations/create/build', object: object, trigger: trigger, name: name, function_path: function_path, priority: priority, delay: delay, max_attempts: max_attempts, is_background_job: is_background_job
+
+  function object = '<%= &module_path =%>/lib/commands/automations/create/check', object: object
+
+  if object.valid
+
+    function object = '<%= &module_path =%>/lib/commands/automations/create/execute', object: object
+
+  endif
+
+
+  return object
+
+%}

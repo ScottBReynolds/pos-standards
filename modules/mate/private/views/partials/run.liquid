@@ -1,0 +1,40 @@
+{%- comment -%}
+  # Loop through all functions related to trigger
+{%- endcomment -%}
+
+{%- function automations = '<%= &module_path =%>/lib/queries/automations/search', trigger: trigger -%}
+
+{%- for automation in automations.results -%}
+
+
+  {%- comment -%}
+    # BACKGROUND JOB
+  {%- endcomment -%}
+
+  {%- if automation.is_background_job -%}
+
+    {%- assign priority = automation.priority | default: 'default' -%}
+    {%- assign delay = automation.delay | default: 0 -%}
+    {%- assign max_attempts = automation.max_attempts | default: 1 -%}
+    {%- assign source_name = automation.name | default: automation.trigger | default: 'unknown' -%}
+
+    {%- background priority: priority, delay: delay, max_attempts: max_attempts, source_name: source_name, path: automation.function_path, data: data -%}
+
+      {%- function a = path, data: data -%}
+
+    {%- endbackground -%}
+
+
+  {%- comment -%}
+    # LINEAR (not a background job)
+  {%- endcomment -%}
+
+  {%- else -%}
+
+    {%- function a = automation.function_path, data: data -%}
+
+  {%- endif -%}
+
+{%- endfor -%}
+
+{%- return automations -%}
