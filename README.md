@@ -37,25 +37,27 @@ Queries should be in the queries directory: [views/partials/lib/queries](https:/
 
 ### 2. Naming:
 
-#### 2.1 ids
+#### 2.1 Module Path
+Replace the module path with <%= &module_path =%>
+[Example](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/graphql/automations/create.graphql)
+Learn about [Module Templates.](https://documentation.platformos.com/developer-guide/modules/templates#content)
+#### 2.2 ids
 When working with queries and mutations, there may be several ids. Properly naming ids will reduce confusion.
-##### 2.1.1 item_id
+##### 2.2.1 item_id
 Prefix the main record id with item (i.e. item_id)
-##### 2.1.2 Secondary ids
+##### 2.2.2 Secondary ids
 Prefix "secondary" ids with object or property name. Examples: user_id, property_id, etc.
-#### 2.2 Functions
-##### 2.2.1 Name
-Functions should be named using the commands/queries name followed by the action name. (e.g. function users_find = 'modules/chat/lib/queries/users/find')
-##### 2.2.2 is_
-Functions that return a boolean should be prefixed with is_. (e.g. is_logged_in, is_admin, is_user)
-#### 2.3 GraphQL
-##### 2.3.1 item(s) Alias (instead of records and users)
-Use the alias item(s) to form a consistent naming convention (instead of records and users). (e.g. items: records(), item: record()
-##### 2.3.2 item_id Alias for (id)
-Always specify id types by prefixing with the id type e.g. item_id. This helps avoid id confusion.
-##### 2.3.3 page_num Alias for (page)
-page is a global variable, so there is a conflict when using it as a custom param variable.
-##### 2.3.4 per_page Alias for (limit)
-Using limit as a graphql parameter could cause property name conflict.
+#### 2.3 Functions
+##### 2.3.1 Name
+Function names should match the path of the command or query. object_action. (e.g. function users_find = 'modules/chat/lib/queries/users/find')
+##### 2.3.2 is_
+When representing a boolean the name should be prefixed with is_. (e.g. is_logged_in, is_admin, is_user)
+#### 2.4 GraphQL
+##### 2.4.1 Aliases
+ - item(s) => record(s)
+ - item(s) => user(s)
+ - item_id => id
+ - page_num => page
+ - limit => per_page
 
 ### 3. Coding:
