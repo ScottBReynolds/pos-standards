@@ -37,7 +37,7 @@ Queries should be in the queries directory: [views/partials/lib/queries](https:/
 
 ### 2. Naming:
 #### 2.1 Module Path
-Replace the module path with <%= &module_path =%>  
+Replace the module path with <%= &module_path =%> 
 [Example](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/graphql/automations/create.graphql)  
 Learn about [Module Templates.](https://documentation.platformos.com/developer-guide/modules/templates#content)
 #### 2.2 ids
