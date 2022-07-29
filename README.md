@@ -23,23 +23,22 @@ This guide is divided between examples and specific recommendations. You will fi
 The standards are broken up in to three categories (structure, naming, and coding).
 
 ### 1. Structure: 
-The example module, [Structure](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure), demostrates the recommended structure.
+An example module, [Mate](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate), demostrates the recommended structure.
 
 #### 1.1 template-values.json
-To avoid module name collisions modules should include a variable named "module_path". [Example](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/structure/private/template-values.json)
+To avoid module name collisions modules should include a variable named "module_path". [template-values.json](https://github.com/ScottBReynolds/pos-standards/blob/structure/modules/mate/template-values.json)
 
 #### 1.2 Commands
-Commands should be in the commands directory: [views/partials/lib/commands](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure/private/views/partials/lib/commands)
+Commands should be in the commands directory: [views/partials/lib/commands](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/views/partials/lib/commands)
 
 #### 1.3 Queries
-Queries should be in the queries directory: [views/partials/lib/queries](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/structure/private/views/partials/lib/queries)
+Queries should be in the queries directory: [views/partials/lib/queries](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/views/partials/lib/queries)
 
 
 ### 2. Naming:
-
 #### 2.1 Module Path
-Replace the module path with <%= &module_path =%>
-[Example](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/graphql/automations/create.graphql)
+Replace the module path with <%= &module_path =%> 
+[Example](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/graphql/automations/create.graphql)  
 Learn about [Module Templates.](https://documentation.platformos.com/developer-guide/modules/templates#content)
 #### 2.2 ids
 When working with queries and mutations, there may be several ids. Properly naming ids will reduce confusion.
