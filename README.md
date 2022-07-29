@@ -60,3 +60,5 @@ When representing a boolean the name should be prefixed with is_. (e.g. is_logge
  - limit => per_page
 
 ### 3. Coding:
+#### 3.1 Page (function + render)
+Instead of hard coding each page, fetch data with a function tag (views/partials/lib/queries) and output with a render tag (views/partials/themes)
