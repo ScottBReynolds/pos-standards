@@ -61,4 +61,28 @@ When representing a boolean the name should be prefixed with is_. (e.g. is_logge
 
 ### 3. Coding:
 #### 3.1 Page (function + render)
-Instead of hard coding each page, fetch data with a function tag (views/partials/lib/queries) and output with a render tag (views/partials/themes)
+Instead of hard coding each page, get data with a function tag (views/partials/lib/commands or queries) and output with a render tag (views/partials/themes). This helps keep code clean and simple to read.
+##### (views/pages/index)
+```
+{% liquid
+    function data = 'lib/commands/data', id: id
+    render 'themes/simple/data', data: data
+%}
+```
+
+#### 3.2 Themes
+Themes (views/partials/themes) is a concept that uses the liquid render tag to output HTML, or JSON etc without polluting it with unessasary code used to collect or create data. Data is supplied directly to the theme but not retrieved, maniplulated or created inside the theme.
+
+###### (views/pages/index)
+```
+{% liquid
+    function data = 'lib/commands/data', id: id
+    render 'themes/simple/data', data: data
+%}
+```
+
+###### (views/partials/themes/simple/index)
+```
+<h1>{{ data.title }}</h1>
+```
+This help keep code used to render the page clean and makes creating alternate themes easier as they only use data supplied to them.
