@@ -38,19 +38,19 @@ Queries should be in the queries directory: [views/partials/lib/queries](https:/
 ### 2. Naming:
 #### 2.1 Module Path
 Replace the module path with <%= &module_path =%> 
-[See Example](https://github.com/ScottBReynolds/pos-standards/tree/structure/modules/mate/private/graphql/automations/create.graphql)  
+[See Examples](https://github.com/ScottBReynolds/pos-standards/search?q=module_path)  
 Learn about [Module Templates.](https://documentation.platformos.com/developer-guide/modules/templates#content)
 #### 2.2 ids
 When working with queries and mutations, there may be several ids. Properly naming ids will reduce confusion.
 ##### 2.2.1 item_id
-Prefix the main record id with item (i.e. item_id). [See Example](https://github.com/ScottBReynolds/pos-standards/search?q=item_id)
+Prefix the main record id with item (i.e. item_id). [See Examples](https://github.com/ScottBReynolds/pos-standards/search?q=item_id)
 ##### 2.2.2 Secondary ids
 Prefix "secondary" ids with object or property name. Examples: user_id, property_id, etc.
 #### 2.3 Functions
 ##### 2.3.1 Name
 Function names should match the path of the command or query. object_action. (e.g. function users_find = 'modules/chat/lib/queries/users/find')
 ##### 2.3.2 is_
-When representing a boolean the name should be prefixed with is_. (e.g. is_logged_in, is_admin, is_background_job) [See Example](https://github.com/ScottBReynolds/pos-standards/search?q=is_background_job)
+When representing a boolean the name should be prefixed with is_. (e.g. is_logged_in, is_admin, is_background_job) [See Examples](https://github.com/ScottBReynolds/pos-standards/search?q=is_background_job)
 #### 2.4 GraphQL
 ##### 2.4.1 Aliases
  - item(s) => record(s)
